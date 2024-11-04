@@ -20,7 +20,16 @@ const navItems = {
     </div>
     <div class="flex flex-row gap-4 mt-6 md:mt-0 md:ml-auto items-center">
       {
-        Object.entries(navItems).map(([path, { name }]) => (
+        Object.entries(navItems).map(([path, { name }]) => (name=="Shop")?
+        (
+          <a
+          href={path}
+          target="blank"
+          class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative" >
+          {name}
+        </a>
+        ):
+        (
           <a
             href={path}
             class="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative">
