@@ -1,66 +1,191 @@
 ---
 import Base from "../layouts/Base.astro";
 import { socialLinks } from "../config";
+import { gameLinks } from "../config";
 import { Image } from "astro:assets";
+import ImageGrid from "../components/mdx/ImageGrid.astro";
 ---
 
 <Base>
   <section>
-    <a href={socialLinks.twitter} target="_blank">
+    <a href={gameLinks.home} target="_blank">
       <Image
         src="/profile.png"
         alt="Profile photo"
-        class="rounded-full bg-gray-100 block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-5 grayscale hover:grayscale-0"
-        width={160}
-        height={160}
+        class="rounded-full block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-5 hover:saturate-150"
+        width={200}
+        height={200}
       />
     </a>
 
-    <h1 class="mb-8 text-2xl font-medium tracking-tight">
-      Portfolio, made simple!
+    <div class="prose prose-neutral dark:prose-invert">
+      <p>
+      Welcome! I'm a tabletop game designer and publisher out of Pittsburgh, 
+      PA. I make roleplaying and storytelling games that I think you'll really enjoy. 
+      I started designing these games around 2019 and am now looking to do it full time.
+      </p>
+      <p>
+      Scroll down for an overview of my games, or check out my {" "}
+      <a href={gameLinks.home} target="_blank">store</a>{" "}
+      to order physical copies of my games, download supplementary materials from the {" "}
+      <a href="/downloads">downloads</a>{" "}
+      page, check out some pretty {" "}
+      <a href="/photos">photos</a>{" "}
+      of the games, or head to {" "}
+      <a href={gameLinks.itch} target="_blank">itch.io</a>{" "}
+      to pick up pdfs of the games!
+      </p>
+      
+    <ImageGrid
+      columns={1}
+      images={[
+        {
+          src: "/photos/allgames.jpg",
+          alt: "All Games",
+        },
+      ]}
+    />
+    </div>
+  </section>
+
+  <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+
+  <section>
+    <a href={gameLinks.NSU} target="_blank">
+      <Image
+        src="/logos/NSU_Circle.png"
+        alt="No Stone Unturned"
+        class="rounded-full lg:mt-5 mt-0 pt-5 lg:mb-5 mb-5 mx-auto sm:float-right sm:ml-5 sm:mb-5 hover:hue-rotate-90"
+        width={150}
+        height={150}
+      />
+    </a>
+
+    <h1 class="mb-2 mt-4 text-2xl font-medium tracking-tight">
+      No Stone Unturned
     </h1>
+    <h2 class="mb-4 italic">
+      Post-post-apocalyptic GMless Roleplaying
+    </h2>
 
     <div class="prose prose-neutral dark:prose-invert">
       <p>
-        A clean, fast, and lightweight portfolio template built with Astro,
-        Vercel, and Tailwind CSS for optimal performance.
+        No Stone Unturned is a gmless tabletop roleplaying game set long 
+        after an apocalyptic collapse of society. Learn who you really are by venturing into the broken and
+        recovering world, turning over stones, and seeing what happens. Track the changes your adventures incur
+        on the fragile environment, and experience how the world changes you in turn.
       </p>
       <p>
-        Astrofolio includes all the essentials for a stunning portfolio: SEO,
-        MDX support, RSS, Atom, & JSON feeds, analytics, tweet & YouTube embeds,
-        KaTeX integration, and{" "}
-        <a
-          target="_blank"
-          href="https://github.com/vikas5914/Astrofolio?tab=readme-ov-file#features">
-          more
-        </a>
-        .
-      </p>
-      <p>
-        Astrofolio is{" "}
-        <a href={socialLinks.github} target="_blank"> open-source </a>{" "}
-        and fully customizable, making it easy to add more features.
-      </p>
-      <p>
-        <a
-          href="https://vercel.com/new/clone?repository-url=https://github.com/vikas5914/Astrofolio"
-          target="_blank">
-          Deploy
-        </a>{" "}
-        your Astrofolio site with Vercel in minutes and follow the set up instructions
-        in the{" "}
-        <a href="/blog/getting-started">Getting Started</a> post.
-      </p>
-      <p>
-        Next.js built and maintained by{" "}
-        <a href="https://imsirius.xyz/" target="_blank"> Sirius </a>
-        <br />
-        Astro buit and maintained by <a
-          href="https://kapadiya.net/"
-          target="_blank">
-          Vikas
-        </a> .
+        No Stone Unturned comes as a 56 page book in four parts. Part 1 takes you through worldbuilding and character creation,
+        part 2 explains the rules of the game, part 3 cotains the framework for downtime between adventures,
+        and part 4 teaches the agenda & principles of gameplay and offers some alternate rules.
       </p>
     </div>
   </section>
+
+<hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+
+<section>
+  <a href={gameLinks.GN} target="_blank">
+    <Image
+      src="/logos/GN_Circle.png"
+      alt="Grasping Nettles"
+      class="rounded-full lg:mt-5 mt-0 pt-5 lg:mb-5 mb-5 mx-auto sm:float-right sm:ml-5 sm:mb-5 hover:hue-rotate-90"
+      width={150}
+      height={150}
+    />
+  </a>
+
+  <h1 class="mb-2 mt-4 text-2xl font-medium tracking-tight">
+    Grasping Nettles
+  </h1>
+  <h2 class="mb-4 italic">
+    Generational Story-Focused Worldbuilding
+  </h2>
+
+  <div class="prose prose-neutral dark:prose-invert">
+    <p>
+    Grasping Nettles is a worldbuilding game for 1-6 players about a community and its story over the course of generations.
+
+    You take turns moving factions around a central board and adding new things to the world. Each turn, you'll either define a faction, describe a location, 
+    discover an issue, creating characters, starting projects, catching glimpses of other communities, or framing scenes.
+    </p>
+    <p>
+      Grasping Nettles comes as a 28 page zine in two parts. The first part has all the rules you need to play the game, and the second contains
+      six "Quick Nettles" which are pre-written world seeds that get your game started.
+    </p>
+  </div>
+</section>
+
+<hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+
+<section>
+  <a href={gameLinks.LHI} target="_blank">
+    <Image
+      src="/logos/LHI_Circle.png"
+      alt="Legend Has It"
+      class="rounded-full lg:mt-5 mt-0 pt-5 lg:mb-5 mb-5 mx-auto sm:float-right sm:ml-5 sm:mb-5 hover:hue-rotate-90"
+      width={150}
+      height={150}
+    />
+  </a>
+
+  <h1 class="mb-2 mt-4 text-2xl font-medium tracking-tight">
+    Legend Has It
+  </h1>
+  <h2 class="mb-4 italic">
+    Bookshelf-driven anthology mythmaking
+  </h2>
+
+  <div class="prose prose-neutral dark:prose-invert">
+    <p>
+      In Legend Has It, players create an anthology of stories. Each time a player takes a turn, they grab a book and turn to a page, 
+      paragraph, and sentence dictated to them by the game. They read this sentence aloud and then use it as inspiration to tell the next part of the story.
+      Each story in the anthology the players are creating pulls sentences out of its own book.
+    </p>
+    <p>
+      Legend Has It comes as a 54-card deck with all the rules written on the inside of the fold-out box. The deck has 24 timeline cards to guide play, 5 
+      number cards to generate random sentences from your books, 6 mythos type cards to flavor your anthology, one X-card to use as a safety tool, and 18 
+      references and bonus rule cards.
+    </p>
+  </div>
+</section>
+
+<hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+
+<section>
+  <a href={gameLinks.MBSB} target="_blank">
+    <Image
+      src="/logos/MBSB_Circle.png"
+      alt="My Brain is a Stick of Butter"
+      class="rounded-full lg:mt-5 mt-0 pt-5 lg:mb-5 mb-5 mx-auto sm:float-right sm:ml-5 sm:mb-5 hover:hue-rotate-90"
+      width={150}
+      height={150}
+    />
+  </a>
+
+  <h1 class="mb-2 mt-4 text-2xl font-medium tracking-tight">
+    My Brain is a Stick of Butter
+  </h1>
+  <h2 class="mb-4 italic">
+    Introspective, single-player ADHD simulation
+  </h2>
+
+  <div class="prose prose-neutral dark:prose-invert">
+    <p>
+      my brain is a stick of butter is a solo tabletop roleplaying game about living a week with ADHD and how hard it can be to balance all of the tasks life expects you to complete. 
+      It takes about 30-60 minutes to play, at which point you can step out of the game world and back into your real life. You'll need the book (or a printout of the playsheet), 
+      a deck of playing cards, and a six-sided die to play.
+    </p>
+    <p>
+      The game is designed to replicate my personal experience with the constant background thrum of executive dysfunction that stems from my ADHD. The deck of cards and the Brain Die
+       are meant to represent the lack of agency I feel when choosing what tasks I focus on at any given time. A lot of times, things go according to plan. But just as often, my mind
+       and my attention are pulled in another direction.
+    </p>
+    <p>
+      my brain is a stick of butter comes as a 24-page spiral-bound cardstock notebook. It contains all the rules you need to play, as well as a couple of supplemental essays about the
+      design and my experience with ADHD. The back of the book has 5 playsheets that you can use to play the game.
+    </p>
+  </div>
+</section>
 </Base>

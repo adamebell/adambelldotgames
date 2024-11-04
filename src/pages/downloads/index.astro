@@ -1,0 +1,142 @@
+---
+import Base from "../../layouts/Base.astro";
+import { gameLinks } from "../../config";
+
+const downloads = [
+  {
+    GameTitle: "No Stone Unturned",
+    url: gameLinks.NSU,
+  },
+  {
+    title: "No Stone Unturned References",
+    format: "pdf",
+    description:
+      "Double-sided reference sheet for No Stone Unturned explaining details, collateral, aspects, mood overload, and the action roll.",
+    url: "/downloads/NSU_Reference.pdf",
+  },
+  {
+    title: "No Stone Unturned Character Sheet",
+    format: "pdf",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam veritatis dolorem rem praesentium dicta labore, at laudantium quisquam.",
+    url: "/NSU_Charsheet.pdf",
+  },
+  {
+    GameTitle: "Grasping Nettles",
+    url: gameLinks.GN
+  },
+  {
+    title: "The Wheel, Printable",
+    format: "pdf",
+    description:
+      "The Wheel from Grasping Nettles formatted for printing on letter paper",
+    url: "/downloads/GN_TheWheel.pdf",
+  },
+  {
+    title: "Online Play Guide",
+    format: "zip",
+    description:
+      "An online play guide including a link to a miro board you can copy and the files needed to populate it",
+    url: "/downloads/GN_OnlinePlay.zip",
+  },
+  {
+    title: "Grasping Nettles: The Audiobook",
+    format: "zip",
+    description:
+      "An audiobook of the game narrated by the author. It's also availabe for browser play on itch.",
+    url: "/downloads/GN_OnlinePlay.zip",
+  },
+  {
+    title: "Grasping Nettles Game Design Guide",
+    format: "pdf",
+    description:
+      "A guide on making your own games like Grasping Nettles",
+    url: "/downloads/GN_GDG.pdf",
+  },
+  {
+    GameTitle: "Legend Has It",
+    url: gameLinks.LHI
+  },
+  {
+    title: "Legend Has It Rules Reference",
+    format: "pdf",
+    description:
+      "The rules of Legend Has It on a single page, in color",
+    url: "/downloads/LHI_RulesColor.pdf",
+  },
+  {
+    title: "Legend Has It Rules Reference (BW)",
+    format: "pdf",
+    description:
+      "The rules of Legend Has It on a single page, in black and white",
+    url: "/downloads/LHI_RulesBW.pdf",
+  },
+  {
+    GameTitle: "my brain is a stick of butter",
+    url: gameLinks.MBSB
+  },
+  {
+    title: "my brain is a stick of butter playsheet",
+    format: "pdf",
+    description:
+      "The playsheet for my brain is a stick of butter. One page is full color, the other is black and white.",
+    url: "/downloads/MBSB_Playsheet.pdf",
+  },
+];
+
+const title = "Downloads";
+const description = "Supplemental files for Adam Bell Games";
+---
+
+<Base title={title} description={description}>
+  <section>
+    <h1 class="mb-2 text-4xl italic font-medium tracking-tight">Downloads</h1>
+    <div class="flex flex-col">
+            <p class="prose prose-neutral dark:prose-invert pt-3">
+              Here are the supplemental downloads for all of my published games. If I'm missing anything, let me know and I'll add it!
+            </p>
+          </div>
+      {
+        downloads.map((download, index) => (download.GameTitle != null && download.GameTitle.length > 0) ? (
+          <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
+          <a
+            href={download.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block group hover:opacity-80 transition-opacity duration-200">
+            <div class="flex flex-col">
+            <div class="w-full flex justify-between items-baseline">
+                <span class="text-black dark:text-white text-2xl alfa-slab-one-regular">
+                  {download.GameTitle}
+                </span>
+            </div>
+            </div>
+          </a>
+        )
+        :
+        (
+          <a
+          href={download.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block group hover:opacity-80 transition-opacity duration-200">
+          <div class="flex flex-col">
+            <div class="w-full flex justify-between items-baseline">
+              <span class="text-blue-900 dark:text-blue-200 font-bold text-xl tracking-tight italic mt-5">
+                {download.title}
+              </span>
+              <span class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
+                {download.format}
+              </span>
+            </div>
+            <p class="prose prose-neutral dark:prose-invert pt-1">
+              {download.description}
+            </p>
+          </div>
+        </a>
+        )
+      )
+      }
+    </div>
+  </section>
+</Base>

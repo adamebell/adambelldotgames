@@ -1,18 +1,20 @@
 ---
 import { metaData } from "../config";
 import { Icon } from "astro-icon/components";
+import { gameLinks } from "../config";
 
 const navItems = {
-  "/blog": { name: "Blog" },
-  "/projects": { name: "Projects" },
+  "https://adamebellgames.bigcartel.com/": { name: "Shop" },
+  "/downloads": { name: "Downloads" },
   "/photos": { name: "Photos" },
+  "/blog": { name: "Blog" },
 };
 ---
 
-<nav class="lg:mb-16 mb-12 py-5">
+<nav class="lg:mb-2 mb-2">
   <div class="flex flex-col md:flex-row md:items-center justify-between">
     <div class="flex items-center">
-      <a href="/" class="text-3xl font-semibold">
+      <a href="/" class="text-3xl alfa-slab-one-regular">
         {metaData.title}
       </a>
     </div>
@@ -38,6 +40,8 @@ const navItems = {
     </div>
   </div>
 </nav>
+
+<hr class="my-5 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
 
 <script is:inline>
   function setTheme(theme) {

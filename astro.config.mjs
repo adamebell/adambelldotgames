@@ -13,7 +13,7 @@ import opengraphImages, { presets } from "astro-opengraph-images";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astrofolio-astro.vercel.app",
+  site: "https://adambell.games",
   integrations: [
     mdx({
       image: {
@@ -52,7 +52,7 @@ export default defineConfig({
       include: {
         "fa6-solid": ["rss", "circle-half-stroke"],
         tabler: ["mail-filled"],
-        "fa6-brands": ["x-twitter", "github", "instagram", "linkedin-in"],
+        "fa6-brands": ["x-twitter", "itch-io", "instagram", "bluesky"],
       },
     }),
     sitemap(),
