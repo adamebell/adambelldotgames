@@ -2,9 +2,9 @@ export const metaData = {
   baseUrl: "https://adambell.games/",
   title: "Adam Bell Games",
   name: "Adam Bell",
-  ogImage: "/opengraph-image.png",
+  ogImage: "/photos/allgames.jpg",
   description:
-    "A clean, fast, and lightweight portfolio template built with Next.js, Vercel, and Tailwind CSS for optimal performance.",
+    "Tabletop roleplaying and storytelling games by Adam Bell",
 };
 
 export const socialLinks = {
