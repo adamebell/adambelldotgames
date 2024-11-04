@@ -16,10 +16,10 @@ export const socialLinks = {
 };
 
 export const gameLinks = {
-  home: "https://adamebellgames.bigcartel.com",
-  NSU: "https://adamebellgames.bigcartel.com/product/no-stone-unturned",
-  GN: "https://adamebellgames.bigcartel.com/product/grasping-nettles",
-  LHI: "https://adamebellgames.bigcartel.com/product/legend-has-it",
-  MBSB: "https://adamebellgames.bigcartel.com/product/my-brain-is-a-stick-of-butter",
+  home: "https://shop.adambell.games",
+  NSU: "https://shop.adambell.games/product/no-stone-unturned",
+  GN: "https://shop.adambell.games/product/grasping-nettles",
+  LHI: "https://shop.adambell.games/product/legend-has-it",
+  MBSB: "https://shop.adambell.games/product/my-brain-is-a-stick-of-butter",
   itch: "https://adambell.itch.io"
 };
