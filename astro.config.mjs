@@ -11,7 +11,6 @@ import vercel from "@astrojs/vercel/static";
 import icon from "astro-icon";
 import opengraphImages, { presets } from "astro-opengraph-images";
 
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://adambell.games",
@@ -58,6 +57,7 @@ export default defineConfig({
     }),
     sitemap(),
     opengraphImages({
+      render: presets.waveSvg,
       options: {
         fonts: [
           {
