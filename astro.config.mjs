@@ -55,20 +55,7 @@ export default defineConfig({
         "fa6-brands": ["x-twitter", "itch-io", "instagram", "bluesky"],
       },
     }),
-    sitemap(),
-    opengraphImages({
-      options: {
-        fonts: [
-          {
-            name: "Roboto",
-            weight: 400,
-            style: "normal",
-            data: fs.readFileSync("node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"),
-          },
-        ],
-      },
-      render: presets.blackAndWhite,
-    }),
+    sitemap(),    
   ],
   output: "static",
   adapter: vercel({
