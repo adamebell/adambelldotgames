@@ -28,4 +28,4 @@ const presskits = defineCollection({
 	}),
 });
 
-export const collections = { presskits };
+export const collections = { blog, presskits };
