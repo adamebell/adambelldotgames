@@ -58,21 +58,17 @@ export default defineConfig({
     }),
     sitemap(),
     opengraphImages({
-      render: presets.blackAndWhite,
       options: {
         fonts: [
           {
             name: "Roboto",
-            name: "Roboto",
-            name: "Roboto",
             weight: 400,
             style: "normal",
-            data: fs.readFileSync(
-              "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"
-            ),
+            data: fs.readFileSync("node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"),
           },
         ],
       },
+      render: presets.blackAndWhite,
     }),
   ],
   output: "static",

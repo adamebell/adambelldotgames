@@ -2,7 +2,7 @@ export const metaData = {
   baseUrl: "https://adambell.games/",
   title: "Adam Bell Games",
   name: "Adam Bell",
-  ogImage: "/photos/allgames.jpg",
+  ogImage: "/opengraph-image.png",
   description:
     "Tabletop roleplaying and storytelling games by Adam Bell",
 };
