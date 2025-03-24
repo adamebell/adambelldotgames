@@ -25,6 +25,7 @@ const presskits = defineCollection({
 		publishedAt: z.coerce.date(),
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
+		externalUrl: z.string().optional(),
 	}),
 });
 
