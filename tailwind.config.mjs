@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Averia Libre", ...defaultTheme.fontFamily.sans],
+        sans: ["Geist Sans", ...defaultTheme.fontFamily.sans],
         mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
       },
       typography: {
