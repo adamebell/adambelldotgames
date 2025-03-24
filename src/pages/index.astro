@@ -7,6 +7,26 @@ import ImageGrid from "../components/mdx/ImageGrid.astro";
 ---
 
 <Base>
+
+  <section>
+  <a href="https://www.kickstarter.com/projects/adamebell/uneasy-lies-the-head-2e?ref=880i70" target="_blank">
+  <div class="prose prose-neutral dark:prose-invert">
+    <ImageGrid
+      columns={1}
+      images={[
+        {
+          src: "/uneasy-press/uneasyheader.jpg",
+          alt: "All Games",
+        },
+      ]}
+    />  
+  <h1>Uneasy Lies the Head is coming to kickstarter on April 8th!</h1>
+
+  </div>
+  <a>
+  </section>
+  
+  <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
   <section>
     <a href={gameLinks.home} target="_blank">
       <Image
@@ -19,6 +39,7 @@ import ImageGrid from "../components/mdx/ImageGrid.astro";
     </a>
 
     <div class="prose prose-neutral dark:prose-invert">
+      <h2>About Adam Bell Games</h3>
       <p>
       Welcome! I'm a tabletop game designer and publisher out of Pittsburgh, 
       PA. I make roleplaying and storytelling games that I think you'll really enjoy. 
@@ -34,8 +55,7 @@ import ImageGrid from "../components/mdx/ImageGrid.astro";
       <a href={gameLinks.itch} target="_blank">itch.io</a>{" "}
       to pick up pdfs of the games!
       </p>
-      
-    <ImageGrid
+      <ImageGrid
       columns={1}
       images={[
         {
@@ -48,7 +68,6 @@ import ImageGrid from "../components/mdx/ImageGrid.astro";
   </section>
 
   <hr class="my-12 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10" />
-
   <section>
     <a href={gameLinks.NSU} target="_blank">
       <Image
