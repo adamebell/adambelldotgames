@@ -11,7 +11,7 @@ export const socialLinks = {
   twitter: "https://x.com/adamebell",
   itchio: "https://adambell.itch.io",
   instagram: "https://www.instagram.com/adambellgames",
-  bluesky: "https://bsky.app/profile/adambell.games",
+  bluesky: "https://bsky.app/profile/adamebell.games",
   email: "mailto:contact@adambell.games",
 };
 
