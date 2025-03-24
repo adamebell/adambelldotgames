@@ -130,6 +130,12 @@ table {
   font-style: normal;
 }
 
+.averia {
+  font-family: "Averia Serif Libre", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 [data-theme="dark"] .astro-code ,
 [data-theme="dark"] .astro-code span {
   color: var(--shiki-dark) !important;

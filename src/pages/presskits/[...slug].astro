@@ -1,0 +1,70 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import "katex/dist/katex.min.css";
+import { metaData } from "../../config";
+import { Image } from "astro:assets";
+
+
+export async function getStaticPaths() {
+  const posts = await getCollection("presskits");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"presskits">;
+
+import { getImagePath } from "astro-opengraph-images";
+const post = Astro.props;
+const { url, site } = Astro;
+const openGraphImageUrl = getImagePath({ url, site });
+
+const { Content } = await post.render();
+---
+
+<Base title={post.data.title} description={post.data.summary}>
+  <section>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: post.data.title,
+        datePublished: post.data.publishedAt,
+        dateModified: post.data.publishedAt,
+        description: post.data.summary,
+        image: openGraphImageUrl,
+        url: url,
+        author: {
+          "@type": "Person",
+          name: metaData.name,
+        },
+      })}
+    />
+    <a class="flex flex-col space-y-1 mb-4 transition-opacity duration-200 hover:opacity-80 card" href={post.data.externalUrl}>                         
+            <div class="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+              <p class="text-black dark:text-white tracking-tight text-3xl">
+                {post.data.title}
+              </p>
+              <p class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
+                <FormattedDate
+                  date={post.data.publishedAt}
+                  includeRelative={false}
+                />
+              </p>
+            </div>
+            <Image
+                src={post.data.heroImage}
+                alt="Profile photo"
+                width="1920"
+                class="pt-3 w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2"
+              />
+    </a>
+    
+    <article class="prose prose-quoteless prose-neutral dark:prose-invert">
+      <Content />
+    </article>
+  </section>
+</Base>

@@ -1,0 +1,52 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { Image } from "astro:assets";
+
+const posts = (await getCollection("presskits")).sort(
+  (a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()
+);
+
+const title = "Press Kits";
+const description = "Press Kits For Adam Bell Games";
+---
+
+<Base title={title} description={description}>
+  <section class="averia">
+    <h1 class="mb-8 text-2xl font-medium tracking-tight"></h1>
+    <div>
+      {
+        posts.map((post) => (
+          <a
+            class="flex flex-col space-y-1 mb-4 transition-opacity duration-200 hover:opacity-80 card"
+            href={`/presskits/${post.slug}`}>  
+                        
+            <div class="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+              <p class="text-black dark:text-white tracking-tight text-3xl">
+                {post.data.title}
+              </p>
+              <p class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
+                <FormattedDate
+                  date={post.data.publishedAt}
+                  includeRelative={false}
+                />
+              </p>
+            </div>
+            <Image
+                src={post.data.heroImage}
+                alt="Profile photo"
+                width="1920"
+                class="pt-3 w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2"
+              />
+            <div class="w-full flex flex-col pt-5 sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+              <p class="text-black dark:text-neutral-300 tracking-tight">
+                {post.data.summary}
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>

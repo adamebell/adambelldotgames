@@ -12,6 +12,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Navbar from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 
+
 import "@fontsource/geist-sans/400.css";
 import "@fontsource/geist-sans/600.css";
 import "@fontsource/geist-mono/400.css";
@@ -30,12 +31,15 @@ const { title, description, image } = Astro.props;
       content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <Themes />
     <BaseHead title={title} description={description} image={image} />
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="Your Site's Title"
+      title="Adam Bell Games"
       href={new URL("rss.xml", Astro.site)}
     />
     <script>
