@@ -57,7 +57,6 @@ export default defineConfig({
     }),
     sitemap(),
     opengraphImages({
-      render: presets.waveSvg,
       options: {
         fonts: [
           {
