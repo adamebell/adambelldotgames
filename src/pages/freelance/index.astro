@@ -1,0 +1,298 @@
+---
+import Base from "../../layouts/Base.astro";
+import { Image } from 'astro:assets';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Tab, TabItem, } from 'free-astro-components'
+import { YouTube } from 'astro-embed';
+
+import Uneasy1 from "src/assets/img/freelance/Uneasy1.png"
+import Uneasy2 from "src/assets/img/freelance/Uneasy2.png"
+import Uneasy3 from "src/assets/img/freelance/Uneasy3.png"
+import Uneasy4 from "src/assets/img/freelance/Uneasy4.png"
+import Uneasy5 from "src/assets/img/freelance/Uneasy5.jpg"
+import Uneasy6 from "src/assets/img/freelance/Uneasy6.jpg"
+import Backstory1 from "src/assets/img/freelance/backstory1.png"
+import GN2 from "src/assets/img/freelance/GN2.jpg"
+import LHI1 from "src/assets/img/freelance/LHI1.jpg"
+import MBSB2 from "src/assets/img/freelance/MBSB2.jpg"
+import NSU3 from "src/assets/img/freelance/NSU3.jpg"
+import Hungry1 from "src/assets/img/freelance/Hungry1.jpg"
+import Hungry2 from "src/assets/img/freelance/Hungry2.jpg"
+
+import OnlinePlay1 from "src/assets/img/freelance/OnlinePlay1.png"
+import OnlinePlay2 from "src/assets/img/freelance/OnlinePlay2.png"
+import OnlinePlay3 from "src/assets/img/freelance/OnlinePlay3.png"
+import OnlinePlay4 from "src/assets/img/freelance/OnlinePlay4.png"
+
+const freelance = [
+  {
+    title: "3D Mockups",
+    modalid: "Blender",
+    rate: "1-3 days",
+    category: "Campaign Visuals",
+    description:
+      "I'll create a 3D model of your book, zine, or board game in Blender and use it to create product shots for your campaign pages.",
+  },
+  {
+    title: "Product Photos",
+    modalid: "Photos",
+    category: "Campaign Visuals",
+    rate: "1-2 days",
+    description:
+      "You'll send me your games, and I'll photograph them. I can photograph on a plain background, on a table, or find relevant scenery.",
+  },
+  {
+    title: "Digital Play Tools",
+    category: "Game Support",
+    modalid: "VTT",
+    rate: "1-2 days",
+    description:
+      "I'll create a way to play your game online with some combination of google sheets, miro, and playingcards.io",
+  },
+  {
+    title: "Gameplay Overview Video",
+    rate: "1-5 days",
+    modalid: "Video",
+    category: "Campaign Visuals",
+    description:
+      "I'll create an explanation video of your game, either filmed live or animated with Blender. These can be quick overviews, or detailed explainers.",
+  },
+  {
+    title: "Freelance Design",
+    rate: "1+ days",
+    category: "Game Design",
+    description:
+      "I'll design a part of your game: a new mode, a character class, some special abilities, or anything else you want.",
+  },
+  {
+    title: "Freelance Writing",
+    rate: "½+ days",
+    category: "Game Design",
+    description:
+      "I'll write a faction, setting, or playset for your game. I'd love to add some weird communists to your setting.",
+  },
+  {
+    title: "Design Consultation",
+    rate: "¼+ days",
+    category: "Game Design",
+    description:
+      "We'll chat about your game, go over your rules, and talk through design challenges you're having. I'll provide feedback on your design.",
+  },
+  {
+    title: "Development Editing",
+    rate: "1+ days",
+    category: "Game Support",
+    description:
+      "I'll edit your manuscript for clarity of rules. I'll advise you on your wording, information design, game structure, and cohesion of rules.",
+  },
+  {
+    title: "Video Editing",
+    rate: "1+ days",
+    category: "Campaign Visuals",
+    description:
+      "I'll edit your overview video, actual play, or any other video.",
+  },
+  {
+    title: "Layout",
+    rate: "2+ days",
+    category: "Campaign Visuals",
+    description:
+      "I'll lay out your game. I specialize in a clean style, with visible headers.",
+  },
+  {
+    title: "Kickstarter Page Design",
+    rate: "1+ days",
+    category: "Campaign Visuals",
+    description:
+      "I'll take your assets and descriptions and create a kickstarter or backerkit page that presents the information cleanly and excitingly.",
+  },
+  {
+    title: "Something Else",
+    rate: "1+ days",
+    category: "Dealer's Choice",
+    description:
+      "I've done every step of the game design, production, and publishing process and would be happy to chat about anything you need.",
+  },
+];
+
+const title = "Hire Me!";
+const description = "Hire Adam to make your games cooler.";
+---
+
+<Base title={title} description={description}>
+  <section>
+    <h1 class="mb-5 text-2xl font-medium tracking-tight">Hire me!</h1>
+    <p class="prose prose-neutral dark:prose-invert">
+      I've been publishing my own games for about 6 years now, and have learned to wear a lot of hats throughout the development cycle of a game. Hire me to wear a hat for your project! 
+    </p>
+    <h3 class="mt-10 mb-5 text-xl font-medium tracking-tight">I use a daily rate of <b class='bg-green-400 dark:bg-green-900 p-1'>$250</b> for all types of work.</h3>
+    <p class="prose prose-neutral dark:prose-invert">
+      I'll be upfront about how many days a task should take me when we agree to work, and you'll pay based on that estimate & the daily rate. This saves me from having to track hours and put a dollar amount on my different expertises. Here's a non-exhaustive list of everything I'd be happy to do, each with a rough idea of how many days it would take.
+
+      If you have something else in mind, I'm happy to chat about it!
+    </p>
+    <div class="space-y-6">
+    <section id="Projects"
+    class="w-fit mx-auto grid grid-cols-1 md:grid-cols-2 justify-items-center justify-center gap-y-10 gap-x-10  mt-5 mb-5">
+
+
+      {
+        freelance.map((freelance, index) => (
+          <div class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+            
+                <div class="px-4 py-3 w-72">
+                    <span class="text-gray-400 mr-3 uppercase text-xs">{freelance.category}</span>
+                    <p class="text-lg font-bold text-black truncate block capitalize">{freelance.title}</p>
+                    <div class="flex items-center">
+                      <p class="text-sm font-semibold text-gray-600 cursor-auto my-3">{freelance.description}</p>
+                    </div>
+                    <hr class="h-0.5 border-t-0 bg-slate-500" />
+                    <div class="flex items-center">
+                      <p class="text-md font-semibold text-black cursor-auto my-3">Est. Time: </p>
+                      <p class="text-md text-gray-600 cursor-auto ml-2">{freelance.rate}</p>
+                    </div>
+                    { (freelance.modalid != null) && <Button icon="eye" iconPosition="right" class="w-full" variant="dark" size="small" label="Details" data-modal-trigger={freelance.modalid}></Button>
+                    }
+                </div>
+     
+        </div>
+        ))
+      }
+  </section>
+  
+  </div>
+
+<div data-lenis-prevent="true" class="averia">
+  <Modal size="3xl" id="Blender">
+    <ModalHeader>
+      <h4 class="mb-5 text-2xl font-medium tracking-tight averia">Blender Mockups (1-3 days)</h4>
+    </ModalHeader>
+    <ModalBody>
+      <div class="grid grid-cols-2 gap-4 averia">
+
+        <p class="prose prose-neutral dark:prose-invert items-stretch col-span-2 ">
+          I will take your cover art and any interior pages you have and make a 3D model of your book and other components in Blender. Simple book mockups will take just a day; more complicated projects that include dice and other components may take 2 or 3. The mockups can have a transparent background or a design of your choice. They can be lit however you want, and we can take still images from any angles you may need.
+        </p>
+        <hr class="my-2 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 col-span-2"/>
+        <div class='flex items-center'>
+          <p class="prose prose-neutral dark:prose-invert align-middle">
+            Here's an example of a very simple mockup with a transparent background. This would be great for store pages, kickstarter banners, or anything else that needs a nice simple image.
+          </p>
+        </div>
+        <Image src={Uneasy1} alt="A description of my image." />
+        
+        <hr class="my-2 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 col-span-2"/>
+        <div class='flex items-center'>
+          <p class="prose prose-neutral dark:prose-invert align-middle">
+            This is the same mockup as the one above, but with some simple scenery to bring out the colors of the book.
+          </p>
+        </div>
+        <Image src={Backstory1} alt="A description of my image." />        
+        
+        <hr class="my-2 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 col-span-2"/>
+        <div class='flex items-center'>
+          <p class="prose prose-neutral dark:prose-invert align-middle">
+            Boxed sets are great candidates for a more extensive mockup, we can lay out all the different bits that come in the box.
+          </p>
+        </div>
+        <Image src={Uneasy3} alt="A description of my image." />     
+        
+        <hr class="my-2 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 col-span-2"/>
+        <div class='flex items-center'>
+          <p class="prose prose-neutral dark:prose-invert align-middle">
+            We can also model the book's pages, creating either a flipthrough or just still images of open pages.
+          </p>
+        </div>
+        <Image src={Uneasy4} alt="A description of my image." />
+
+      </div>
+    </ModalBody>
+    <ModalFooter>
+    </ModalFooter>
+</Modal>
+
+
+<Modal size="3xl" id="Photos">
+  <ModalHeader>
+      <h4 class="mb-5 text-2xl font-medium tracking-tight averia">Product Photos (1-2 days)</h4>
+  </ModalHeader>
+    <ModalBody>
+      <div class="grid grid-cols-2 gap-4 averia">
+
+        <p class="prose prose-neutral dark:prose-invert items-stretch col-span-2 ">
+          You'll send me your game and I'll take nice pictures of it. We'll work together to figure out the type of backdrop and scenery to take the photo in.
+        </p>
+        <hr class="my-2 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 col-span-2"/>
+
+
+        <Image src={GN2} alt="A description of my image." /> 
+        <Image src={Uneasy5} alt="A description of my image." />      
+        <Image src={Uneasy6} alt="A description of my image." />               
+        <Image src={NSU3} alt="A description of my image." />   
+        <Image src={Hungry1} alt="A description of my image." />    
+        <Image src={Hungry2} alt="A description of my image." />   
+        <Image src={MBSB2} alt="A description of my image." />   
+        <Image src={LHI1} alt="A description of my image." />        
+      </div>
+    </ModalBody>
+  <ModalFooter>
+    <Button label="Close" data-modal-close />
+  </ModalFooter>
+</Modal>
+
+<Modal size="3xl" id="VTT">
+  <ModalHeader>
+      <h4 class="mb-5 text-2xl font-medium tracking-tight averia">Digital Play Tools (1-2 days)</h4>
+  </ModalHeader>
+    <ModalBody>
+      <div class="grid grid-cols-2 gap-4 averia">
+        <p class="prose prose-neutral dark:prose-invert items-stretch col-span-2 ">
+          We'll go over the rules of your game and how it's played, then I'll create online play tools in playingcards.io, Google Sheets, Miro, or some other tool to help players of your game experience it smoothly and easily online.
+        </p>
+        <p class="prose prose-neutral dark:prose-invert items-stretch col-span-2 ">
+          Here are some links to examples I've made in the past:
+        </p>
+        <ul class="list-disc pl-5 prose-neutral underline p dark:prose-invert col-span-2">
+          <li><a href="https://miro.com/app/board/uXjVOYMOwRo=/?invite_link_id=49268245266" target="_blank">Grasping Nettles Miro Board</a></li>
+          <li><a href="https://lockedroomgame.com/playtest/playing-online/" target="_blank">Locked Room Murder Mystery Game Online Playtest</a></li>
+          <li><a href="https://adambell.itch.io/legend-has-it" target="_blank">Legend Has It playingcards.io setup file</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1mRYF8Cvq3BM6cVG3PiNcNYN2XI4X1dTlmRYZ2UI2BNc/copy" target="_blank">Promise the Moon Character Sheets in Google Sheets</a></li>
+        </ul>
+        <hr class="my-2 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 col-span-2"/>
+        <Image src={OnlinePlay1} alt="A description of my image." /> 
+        <Image src={OnlinePlay2} alt="A description of my image." />    
+        <Image src={OnlinePlay3} alt="A description of my image." /> 
+        <Image src={OnlinePlay4} alt="A description of my image." />      
+
+      </div>
+    </ModalBody>
+  <ModalFooter>
+    <Button label="Close" data-modal-close />
+  </ModalFooter>
+</Modal>
+
+<Modal size="3xl" id="Video">
+  <ModalHeader>
+      <h4 class="mb-5 text-2xl font-medium tracking-tight averia">Digital Play Tools (1-2 days)</h4>
+  </ModalHeader>
+    <ModalBody>
+      <div class="grid grid-cols-2 gap-4 averia">
+        <p class="prose prose-neutral dark:prose-invert items-stretch col-span-2 ">
+          We'll go over the rules of your game to come up with an overview of play to showcase in a video. We can either do this collaboratively, or you could send me the rules and I'll do it on my own (which likely takes more time). 
+        </p>
+        <p class="prose prose-neutral dark:prose-invert items-stretch col-span-2 ">
+          I can either film the video in person, using online tools & screen recording, or by creating a scene of the table in blender. Here are some videos I've made in the past using these methods:
+        </p>
+        <hr class="my-2 h-0.5 border-t-0 bg-neutral-100 dark:bg-white/10 col-span-2"/>
+        <YouTube id="oG8ZYf5rlIg" />    
+        <YouTube id="dkHHE3_McCw" />    
+        <YouTube id="UeAboWxIG-U" />    
+        <YouTube id="Ugj8ome_kjA" />    
+
+      </div>
+    </ModalBody>
+  <ModalFooter>
+    <Button label="Close" data-modal-close />
+  </ModalFooter>
+</Modal>
+
+</div>
