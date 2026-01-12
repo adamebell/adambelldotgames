@@ -44,6 +44,7 @@ export default defineConfig({
       ],
       gfm: true,
     }),
+    sitemap(),
     tailwind(),
     react({
       experimentalReactChildren: true,
